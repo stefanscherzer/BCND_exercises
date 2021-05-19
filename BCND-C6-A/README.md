@@ -1,18 +1,15 @@
 ## Blockchain Course 6 Exercises
 
-To install, download or clone the repo, then move to the required exercise branch with either:
-
-- `git checkout ExerciseC6A`
-- `git checkout ExerciseC6B`
-- `git checkout ExerciseC6C`
-- `git checkout ExerciseC6D`
-
-and for each exercise run:
+To install, download or clone this folder and run:
 
 `npm install`
 `truffle compile`
 
 ## Develop
+
+Start your ganache-cli with this mnemonic:
+
+`ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"`
 
 To run truffle tests:
 
