@@ -1,17 +1,20 @@
-## Blockchain Course 6 Exercises - Dapp with autonomous smart contracts and oracles
+## Blockchain Course 6 Exercises
 
-To install, download or clone the repo, then move to the required exercise folder and for each exercise run:
+To install, download or clone the repo, then move to the required exercise branch with either:
+
+- `git checkout ExerciseC6A`
+- `git checkout ExerciseC6B`
+- `git checkout ExerciseC6C`
+- `git checkout ExerciseC6D`
+
+and for each exercise run:
 
 `npm install`
 `truffle compile`
 
 ## Develop
 
-Start your ganache-cli with this mnemonic:
-
-`ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"`
-
-To run truffle tests, e.g.:
+To run truffle tests:
 
 `truffle test ./test/ExerciseC6A.js` or `npm test`
 
