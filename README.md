@@ -9,7 +9,7 @@ To install, download or clone the repo, then move to the required exercise folde
 
 Start your ganache-cli with this mnemonic:
 
-`ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"`
+`ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" --accounts=50`
 
 To run truffle tests, e.g.:
 

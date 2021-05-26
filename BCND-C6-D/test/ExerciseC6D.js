@@ -4,7 +4,7 @@ var Test = require('../config/testConfig.js');
 
 contract('ExerciseC6D', async (accounts) => {
 
-  const TEST_ORACLES_COUNT = 10;
+  const TEST_ORACLES_COUNT = 40;
   var config;
   before('setup contract', async () => {
     config = await Test.Config(accounts);
@@ -32,11 +32,13 @@ contract('ExerciseC6D', async (accounts) => {
     let fee = await config.exerciseC6D.REGISTRATION_FEE.call();
 
     // ACT
-    for(let a=1; a<TEST_ORACLES_COUNT; a++) {      
+    for(let a=0; a<TEST_ORACLES_COUNT; a++) {      
       await config.exerciseC6D.registerOracle({ from: accounts[a], value: fee });
       let result = await config.exerciseC6D.getOracle.call(accounts[a]);
       console.log(`Oracle Registered: ${result[0]}, ${result[1]}, ${result[2]}`);
+      console.log(`by now there should be ${a+1} oracles registerd`);
     }
+    
   });
 
   it('can request flight status', async () => {
@@ -70,12 +72,12 @@ contract('ExerciseC6D', async (accounts) => {
           // Check to see if flight status is available
           // Only useful while debugging since flight status is not hydrated until a 
           // required threshold of oracles submit a response
-          let flightStatus = await config.exerciseC6D.viewFlightStatus.call(flight, timestamp);
-          console.log('\nPost', idx, oracleIndexes[idx].toNumber(), flight, timestamp, flightStatus);
+          // let flightStatus = await config.exerciseC6D.viewFlightStatus.call(flight, timestamp);
+          // console.log('\nPost', idx, oracleIndexes[idx].toNumber(), flight, timestamp, flightStatus);
         }
         catch(e) {
           // Enable this when debugging
-          console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp, e.toString());
+          // console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp, e.toString());
         }
 
       }

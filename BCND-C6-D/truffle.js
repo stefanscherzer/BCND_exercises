@@ -9,6 +9,10 @@ module.exports = {
       },
       network_id: '*'
       // gas: 9999999
+      // host: "127.0.0.1",
+      // port: 8545,
+      // network_id: "*", // Match any network id
+      // websockets: true
     }
   },
   compilers: {
